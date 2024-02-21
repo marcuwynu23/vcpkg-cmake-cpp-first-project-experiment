@@ -1,0 +1,6 @@
+*.exe
+*.dll
+*.pdb
+/vcpkg_installed
+*.o
+*.a
