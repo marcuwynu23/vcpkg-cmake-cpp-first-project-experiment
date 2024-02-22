@@ -29,13 +29,21 @@ vckg add port fmt
 ```cmake
 cmake_minimum_required(VERSION 3.10)
 
-project(HelloWorld)
+# set the project name
+project(app)
 
+# add the executable
+# Include source files from the 'app' directory
+file(GLOB APP_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
+add_executable(app ${APP_SOURCES})
+
+# add header files
+target_include_directories(app PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+# find and link fmt library
 find_package(fmt CONFIG REQUIRED)
+target_link_libraries(app PRIVATE fmt::fmt)
 
-add_executable(HelloWorld main.cpp)
-
-target_link_libraries(HelloWorld PRIVATE fmt::fmt)
 ```
 
 6. create CMakePresets.json
