@@ -1,5 +1,5 @@
 {
-  "dependencies": [
-    "fmt"
-  ]
+  "name": "project",
+  "version": "0.0.1",
+  "dependencies": ["fmt"]
 }
